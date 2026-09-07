@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="175" height="90" tilewidth="8" tileheight="8" infinite="0" nextlayerid="6" nextobjectid="7">
+ <objectgroup id="2" name="Spawn">
+  <object id="1" name="PlayerSpawn" x="100" y="620"><point/></object>
+ </objectgroup>
+ <objectgroup id="3" name="BossSpawn">
+  <object id="2" name="FalseKnightSpawn" x="700" y="620"><point/></object>
+ </objectgroup>
+ <objectgroup id="4" name="Collisions">
+  <object id="3" x="0" y="656" width="1400" height="64"/>
+  <object id="4" x="0" y="0" width="20" height="656"/>
+  <object id="5" x="1380" y="0" width="20" height="656"/>
+ </objectgroup>
+ <objectgroup id="5" name="Hazards">
+ </objectgroup>
+</map>

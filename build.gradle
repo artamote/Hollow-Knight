@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+allprojects {
+    apply plugin: "eclipse"
+    version = '1.0'
+
+    repositories {
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+}
+
+ext {
+    gdxVersion = "1.12.1"
+}
+
+project(":desktop") {
+  apply plugin: "java"
+  apply plugin: "application"
+
+  application {
+    mainClass = "com.hollowknight.desktop.DesktopLauncher"
+    applicationDefaultJvmArgs = ["-XstartOnFirstThread"]
+  }
+
+  sourceSets {
+    main {
+      resources {
+        srcDirs = ["../assets"]
+      }
+    }
+  }
+
+  dependencies {
+    implementation project(":core")
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+  }
+}
+
+project(":core") {
+    apply plugin: "java"
+
+    dependencies {
+        implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+    }
+}
